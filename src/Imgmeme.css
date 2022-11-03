@@ -1,0 +1,17 @@
+.menu {
+    margin: 5px 0px;
+    border: 1px black solid;
+    background-color: rgb(47, 51, 74);
+    color: white;
+}
+
+.img {
+    width: 600px;
+}
+
+.texto {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 1px black;
+}
