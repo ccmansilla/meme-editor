@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import html2canvas from 'html2canvas';
 
 export const Imgmeme = () => {
+    let centroH = window.screen.width / 2;
+
     const [texto,setTexto] = useState();
     const [colorTexto, setColor] = useState('#000'); 
-    const [posicionTexto, setPosicion] = useState(350);
+    const [sizeTexto, setSize] = useState(40);
+    const [posicionHTexto, setPosicionH] = useState(centroH);
+    const [posicionVTexto, setPosicionV] = useState(350);
 
     const setFrase = (e) => {
         setTexto(e.target.value);
@@ -29,7 +33,7 @@ export const Imgmeme = () => {
    
   return (
     <div className='text-center'>
-        <h1 className='py-3'>Meme Editor</h1>
+        <h1 className='py-3 titulo'>Meme Editor</h1>
         <div className='d-flex justify-content-center menu'>
             <div className='px-2'>
                 <h4>Frase</h4>
@@ -40,9 +44,22 @@ export const Imgmeme = () => {
                 <input type="color" onInput={(e) => setColor(e.target.value)} />
             </div>
             <div className='px-2'>
+                <h4>Size</h4>
+                <select name='size' onChange={(e) => setSize(e.target.value)}>
+                    <option>20</option>
+                    <option>30</option>
+                    <option selected>40</option>
+                    <option>60</option>
+                    <option>80</option>
+                    <option>100</option>
+                </select>
+            </div>   
+            <div className='px-2'>
                 <h4>Posicion</h4>
-                <button className='btn btn-primary me-1' onClick={() => setPosicion(posicionTexto + 10)} > ↓ </button>
-                <button className='btn btn-primary ms-1' onClick={() => setPosicion(posicionTexto - 10)} > ↑ </button>
+                <button className='btn btn-primary mx-1' onClick={() => setPosicionV(posicionVTexto + 10)} > ↓ </button>
+                <button className='btn btn-primary mx-1' onClick={() => setPosicionV(posicionVTexto - 10)} > ↑ </button>
+                <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto + 10)} > → </button>
+                <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto - 10)} > ← </button>
             </div>
             <div className='px-2'>
                 <h4>Imagen</h4>
@@ -56,7 +73,7 @@ export const Imgmeme = () => {
         </div>
 
         <figure id='meme'>
-            <p className='w-100 position-absolute texto' style={{color: `${colorTexto}`, paddingTop: `${posicionTexto }px` }} >{texto}</p>
+            <p className='position-absolute texto' style={{fontSize:`${sizeTexto}px`, color: `${colorTexto}`, paddingLeft: `${posicionHTexto }px` , paddingTop: `${posicionVTexto }px` }} >{texto}</p>
             <img src={`./memes/${imagen}.jpg`} alt="" className='img' />
         </figure>
 

@@ -1,5 +1,11 @@
+.titulo {
+    margin: 0;
+    background-color: orange;
+    color: black;
+}
+
 .menu {
-    margin: 5px 0px;
+    margin-bottom: 5px;
     border: 1px black solid;
     background-color: rgb(47, 51, 74);
     color: white;
@@ -10,8 +16,7 @@
 }
 
 .texto {
-    text-align: center;
-    font-size: 40px;
     font-weight: bolder;
+    text-align: center;
     text-shadow: 1px 1px 1px black;
 }

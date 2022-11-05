@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   min-width: 100vh;
   background-color: rgb(196, 194, 210);
