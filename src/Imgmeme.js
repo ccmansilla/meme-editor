@@ -10,6 +10,7 @@ export const Imgmeme = () => {
     const [sizeTexto, setSize] = useState(40);
     const [posicionHTexto, setPosicionH] = useState(centroH);
     const [posicionVTexto, setPosicionV] = useState(350);
+    const [rotate, setRotate] = useState(0);
 
     const setFrase = (e) => {
         setTexto(e.target.value);
@@ -44,7 +45,7 @@ export const Imgmeme = () => {
                 <input type="color" onInput={(e) => setColor(e.target.value)} />
             </div>
             <div className='px-2'>
-                <h4>Size</h4>
+                <h4>Tamaño</h4>
                 <select name='size' onChange={(e) => setSize(e.target.value)}>
                     <option>20</option>
                     <option>30</option>
@@ -58,8 +59,13 @@ export const Imgmeme = () => {
                 <h4>Posicion</h4>
                 <button className='btn btn-primary mx-1' onClick={() => setPosicionV(posicionVTexto + 10)} > ↓ </button>
                 <button className='btn btn-primary mx-1' onClick={() => setPosicionV(posicionVTexto - 10)} > ↑ </button>
-                <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto + 10)} > → </button>
                 <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto - 10)} > ← </button>
+                <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto + 10)} > → </button>
+            </div>
+            <div className='px-2'>
+                <h4>Girar</h4>
+                <button className='btn btn-primary mx-1' onClick={() => setRotate(rotate - 15)} > ←  </button>
+                <button className='btn btn-primary mx-1' onClick={() => setRotate(rotate + 15)} > → </button>
             </div>
             <div className='px-2'>
                 <h4>Imagen</h4>
@@ -73,7 +79,7 @@ export const Imgmeme = () => {
         </div>
 
         <figure id='meme'>
-            <p className='position-absolute texto' style={{fontSize:`${sizeTexto}px`, color: `${colorTexto}`, paddingLeft: `${posicionHTexto }px` , paddingTop: `${posicionVTexto }px` }} >{texto}</p>
+            <p className='position-absolute texto' style={{fontSize:`${sizeTexto}px`, color: `${colorTexto}`, marginLeft: `${posicionHTexto }px`, marginTop: `${posicionVTexto }px`, transform: `rotate(${rotate}deg)` }} >{texto}</p>
             <img src={`./memes/${imagen}.jpg`} alt="" className='img' />
         </figure>
 
