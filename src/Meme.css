@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+.titulo {
+    font-family: 'Chewy', cursive;
+    font-weight: bolder;
+    font-size: 60px;
+    margin: 0;
+    background-color: rgb(238, 238, 32);
+    color: rgb(0, 0, 0);
+}
+
+.menu {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border: 1px black solid;
+    background-color: rgb(164, 12, 12);
+    color: white;
+}
+
+.img {
+    width: 600px;
+}
+
+.texto {
+    font-family: 'Chewy', cursive;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
