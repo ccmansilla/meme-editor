@@ -66,9 +66,9 @@ export const Meme = () => {
                 <div className='px-2'>
                     <h4>Tamaño</h4>
                     <select name='size' defaultValue='40' onChange={(e) => setSize(e.target.value)}>
-                        <option>20</option>
+                        <option>30</option>
                         <option>40</option>
-                        <option>60</option>
+                        <option>50</option>
                     </select>
                 </div>
             </div>
