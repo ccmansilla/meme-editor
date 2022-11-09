@@ -50,7 +50,7 @@ export const Meme = () => {
             <div className='d-flex justify-content-center flex-wrap menu'>
                 <div className='px-2'>
                     <h4>Imagen</h4>
-                    <select name="img" defaultValue='0' onChange={selectImg} className='mb-5'>
+                    <select name="img" defaultValue='0' onChange={selectImg}>
                         {imagenes.map((op, index, arr) =>
                             <option value={index}>{op.name}</option>
                         )}
@@ -91,9 +91,11 @@ export const Meme = () => {
                     <button className='btn btn-primary mx-1' onClick={() => setRotate(rotate - 15)} > ←  </button>
                     <button className='btn btn-primary mx-1' onClick={() => setRotate(rotate + 15)} > → </button>
                 </div>
+                <div className='px-2'>
+                    <h4>Meme</h4>
+                    <button onClick={generar} type="button" className='btn btn-primary'>Descargar Meme</button>
+                </div>
             </div>
-
-            <button onClick={generar} type="button" className='btn btn-primary mb-5'>Descargar Meme</button>
         </div>
     )
 }
