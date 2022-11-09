@@ -39,6 +39,7 @@ export const Meme = () => {
             .then(respuesta => respuesta.json())
             .then(datos => {
                 setImagenes(datos.data.memes);
+                setImagen(datos.data.memes[0]);
             })
     }, []);
 
