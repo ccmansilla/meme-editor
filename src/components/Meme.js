@@ -6,6 +6,7 @@ import html2canvas from 'html2canvas';
 export const Meme = () => {
 
     const [texto, setTexto] = useState();
+    const [font, setFont] = useState('arial');
     const [color, setColor] = useState('#000');
     const [size, setSize] = useState('35px');
     const [posX, setPosX] = useState(10);
@@ -61,6 +62,19 @@ export const Meme = () => {
                     <input type="text" name="texto" onChange={setFrase} placeholder='texto aqui..' />
                 </div>
                 <div className='px-2'>
+                    <h5>Fuente</h5>
+                    <select name='font' defaultValue='arial' onChange={(e) => setFont(e.target.value)}>
+                        <option value='Arial'>Arial</option>
+                        <option value='Verdana'>Verdana</option>
+                        <option value='Tahoma'>Tahoma</option>
+                        <option value='Times New Roman'>Times New Roman</option>
+                        <option value='Georgia'>Georgia</option>
+                        <option value='Garamond'>Garamond</option>
+                        <option value='Courier New'>Courier New</option>
+                        <option value='Brush Script MT'>Brush Script MT</option>
+                    </select>
+                </div>
+                <div className='px-2'>
                     <h5>Color</h5>
                     <input type="color" value={color} onInput={(e) => setColor(e.target.value)} />
                 </div>
@@ -74,7 +88,7 @@ export const Meme = () => {
                 </div>
             </div>
             <figure id='meme'>
-                <Frase text={texto} size={size} x={posX} y={posY} color={color} angle={angle} />
+                <Frase text={texto} font={font} size={size} x={posX} y={posY} color={color} angle={angle} />
                 <img src={imagen.url} alt="" className='img' />
             </figure>
 

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Frase({text, x, y, angle, color, size, font='arial'}) {
+export default function Frase({text, x, y, angle, color, size, font}) {
   return (
     <p className='position-absolute texto' 
         style={{ 
-            fontFamily: `${font}`,
+            fontFamily: `${font}, serif`,
             fontSize: `${size}`, 
             color: `${color}`, 
             marginLeft: `${x}px`, 
