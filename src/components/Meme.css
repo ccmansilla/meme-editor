@@ -19,11 +19,16 @@
 
 .img {
     width: 400px;
+    border: 1px solid black;
 }
 
 .texto {
     font-family: 'Chewy', cursive;
     font-weight: bolder;
-    text-align: center;
-    text-shadow: 2px 2px 3px black;
+}
+
+#meme{
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
 }

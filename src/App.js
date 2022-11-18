@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Meme } from './Meme';
+import { Meme } from './components/Meme';
 
 function App() {
   return (

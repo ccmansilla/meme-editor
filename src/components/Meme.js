@@ -1,17 +1,16 @@
 import './Meme.css';
+import Frase from './Frase';
 import React, { useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 
 export const Meme = () => {
-    let centroH = window.screen.width / 2;
-    let canvaX = centroH - 200;
 
     const [texto, setTexto] = useState();
-    const [colorTexto, setColor] = useState('#d7f700');
-    const [sizeTexto, setSize] = useState(40);
-    const [posicionHTexto, setPosicionH] = useState(centroH);
-    const [posicionVTexto, setPosicionV] = useState(150);
-    const [rotate, setRotate] = useState(0);
+    const [color, setColor] = useState('#000');
+    const [size, setSize] = useState('35px');
+    const [posX, setPosX] = useState(10);
+    const [posY, setPosY] = useState(10);
+    const [angle, setAngle] = useState(0);
 
     const [imagen, setImagen] = useState('');
     const [imagenes, setImagenes] = useState([]);
@@ -25,7 +24,7 @@ export const Meme = () => {
     };
 
     const generar = () => {
-        html2canvas(document.querySelector('#meme'), { allowTaint: true, useCORS: true, width: 400, x: canvaX})
+        html2canvas(document.querySelector('#meme'), { allowTaint: true, useCORS: true, width: 400})
             .then(function (canvas) {
                 let img = canvas.toDataURL("memes/jpg");
                 let link = document.createElement("a");
@@ -63,34 +62,34 @@ export const Meme = () => {
                 </div>
                 <div className='px-2'>
                     <h5>Color</h5>
-                    <input type="color" value={colorTexto} onInput={(e) => setColor(e.target.value)} />
+                    <input type="color" value={color} onInput={(e) => setColor(e.target.value)} />
                 </div>
                 <div className='px-2'>
                     <h5>Tamaño</h5>
-                    <select name='size' defaultValue='40' onChange={(e) => setSize(e.target.value)}>
-                        <option>30</option>
-                        <option>40</option>
-                        <option>50</option>
+                    <select name='size' defaultValue='35px' onChange={(e) => setSize(e.target.value)}>
+                        <option value='25px'>Pequeño</option>
+                        <option value='35px'>Mediano</option>
+                        <option value='45px'>Grande</option>
                     </select>
                 </div>
             </div>
             <figure id='meme'>
-                <p className='position-absolute texto' style={{ fontSize: `${sizeTexto}px`, color: `${colorTexto}`, marginLeft: `${posicionHTexto}px`, marginTop: `${posicionVTexto}px`, transform: `rotate(${rotate}deg)` }} >{texto}</p>
+                <Frase text={texto} size={size} x={posX} y={posY} color={color} angle={angle} />
                 <img src={imagen.url} alt="" className='img' />
             </figure>
 
-            <div className='d-flex justify-content-center flex-wrap menu'>
+            <div className='d-flex justify-content-center flex-wrap menu mt-2'>
                 <div className='px-2'>
                     <h5>Posicion</h5>
-                    <button className='btn btn-primary mx-1' onClick={() => setPosicionV(posicionVTexto + 10)} > ↓ </button>
-                    <button className='btn btn-primary mx-1' onClick={() => setPosicionV(posicionVTexto - 10)} > ↑ </button>
-                    <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto - 10)} > ← </button>
-                    <button className='btn btn-primary mx-1' onClick={() => setPosicionH(posicionHTexto + 10)} > → </button>
+                    <button className='btn btn-primary mx-1' onClick={() => setPosY(posY + 10)} > ↓ </button>
+                    <button className='btn btn-primary mx-1' onClick={() => setPosY(posY - 10)} > ↑ </button>
+                    <button className='btn btn-primary mx-1' onClick={() => setPosX(posX - 10)} > ← </button>
+                    <button className='btn btn-primary mx-1' onClick={() => setPosX(posX + 10)} > → </button>
                 </div>
                 <div className='px-2'>
                     <h5>Girar</h5>
-                    <button className='btn btn-primary mx-1' onClick={() => setRotate(rotate - 15)} > ←  </button>
-                    <button className='btn btn-primary mx-1' onClick={() => setRotate(rotate + 15)} > → </button>
+                    <button className='btn btn-primary mx-1' onClick={() => setAngle(angle - 15)} > ←  </button>
+                    <button className='btn btn-primary mx-1' onClick={() => setAngle(angle + 15)} > → </button>
                 </div>
                 <div className='px-2'>
                     <h5>Meme</h5>
