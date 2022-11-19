@@ -75,8 +75,8 @@ export const Meme = () => {
     }, []);
 
     return (
-        <div className='container-fluid quito'>
-            <h1 className='text-center py-3 titulo'>Meme Editor</h1>
+        <div className='container-fluid text-center quito'>
+            <h1 className='py-3 titulo'>Meme Editor</h1>
             <div className='menu border-top border-bottom border-dark border-2 mb-2 responsive' >
                 <div className='d-flex justify-content-center align-items-center'>
                     <div className='px-2'>
