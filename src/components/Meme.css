@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
+.quito {
+    --bs-gutter-x: 0;
+}
+
 .titulo {
     font-family: 'Chewy', cursive;
     font-weight: bolder;
