@@ -5,8 +5,10 @@
     font-weight: bolder;
     font-size: 60px;
     margin: 0;
-    background-color: rgb(238, 238, 32);
-    color: rgb(0, 0, 0);
+    background-color: #198754;
+    color: white;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
 }
 
 .menu {
@@ -25,6 +27,8 @@
 .texto {
     font-family: 'Chewy', cursive;
     font-weight: bolder;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
 }
 
 #meme{
