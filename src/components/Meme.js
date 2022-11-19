@@ -21,7 +21,7 @@ export const Meme = () => {
 
     const [texto, setTexto] = useState('');
     const [font, setFont] = useState('arial');
-    const [color, setColor] = useState('#ffffff');
+    const [color, setColor] = useState('#ffff00');
     const [size, setSize] = useState('30px');
     const [posX, setPosX] = useState(10);
     const [posY, setPosY] = useState(10);
