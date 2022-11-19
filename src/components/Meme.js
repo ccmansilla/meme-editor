@@ -48,7 +48,7 @@ export const Meme = () => {
     const delFrase = () => {
         setFrases([]);
         setFont('arial');
-        setColor('#ffffff');
+        setColor('#ffff00');
         setTexto('');
         setPosX(10);
         setPosY(10);
