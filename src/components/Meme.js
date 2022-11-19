@@ -45,6 +45,15 @@ export const Meme = () => {
         setPosY(posY + 80);
     }
 
+    const delFrase = () => {
+        setFrases([]);
+        setFont('arial');
+        setColor('#ffffff');
+        setTexto('');
+        setPosX(10);
+        setPosY(10);
+    }
+
     const generar = () => {
         html2canvas(document.querySelector('#meme'), { allowTaint: true, useCORS: true, width: 400})
             .then(function (canvas) {
@@ -80,7 +89,8 @@ export const Meme = () => {
                 <div className='px-2'>
                     <h5>Frase</h5>
                     <input type="text" name="texto" value={texto} onChange={setFrase} placeholder='texto aqui..' />
-                    <button className='btn btn-success mx-1' onClick={addFrase} > + </button>
+                    <button className='btn btn-success mx-1' onClick={addFrase} >+</button>
+                    <button className='btn btn-success mx-1' onClick={delFrase} >Borrar</button>
                 </div>
                 <div className='px-2'>
                     <h5>Fuente</h5>
