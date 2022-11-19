@@ -34,3 +34,15 @@
     max-width: 400px;
     margin: 0 auto;
 }
+
+.responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 1200px) {
+    .responsive {
+        flex-direction: row;
+    }
+}
