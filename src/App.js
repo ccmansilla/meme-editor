@@ -4,7 +4,7 @@ import { Meme } from './components/Meme';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Meme />
       <div className='bg-success text-white p-5'>
         <p className='text-center'>by <a href='https://www.linkedin.com/in/carloscmansilla/' style={{color: 'white'}} target='_blank'>Carlos Mansilla</a></p>
