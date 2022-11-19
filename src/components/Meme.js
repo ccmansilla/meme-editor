@@ -3,7 +3,7 @@ import Frase from './Frase';
 import React, { useState, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 
-class Phrase{
+class Phrase {
     constructor(text, x, y, angle, font, size, color) {
         this.text = text;
         this.x = x;
@@ -55,7 +55,7 @@ export const Meme = () => {
     }
 
     const generar = () => {
-        html2canvas(document.querySelector('#meme'), { allowTaint: true, useCORS: true, width: 400})
+        html2canvas(document.querySelector('#meme'), { allowTaint: true, useCORS: true, width: 400 })
             .then(function (canvas) {
                 let img = canvas.toDataURL("memes/jpg");
                 let link = document.createElement("a");
@@ -77,45 +77,51 @@ export const Meme = () => {
     return (
         <div className='text-center'>
             <h1 className='py-3 titulo'>Meme Editor</h1>
-            <div className='d-flex justify-content-center flex-wrap menu'>
-                <div className='px-2'>
-                    <h5>Imagen</h5>
-                    <select name="img" defaultValue='0' onChange={selectImg}>
-                        {imagenes.map((op, index, arr) =>
-                            <option value={index}>{op.name}</option>
-                        )}
-                    </select>
+            <div className='d-flex justify-content-center flex-wrap menu border-top border-bottom border-dark border-2 mb-2' >
+                <div className='d-flex justify-content-center align-items-center'>
+                    <div className='px-2'>
+                        <h5>Imagen</h5>
+                        <select name="img" defaultValue='0' onChange={selectImg}>
+                            {imagenes.map((op, index, arr) =>
+                                <option value={index}>{op.name}</option>
+                            )}
+                        </select>
+                    </div>
                 </div>
-                <div className='px-2'>
-                    <h5>Frase</h5>
-                    <input type="text" name="texto" value={texto} onChange={setFrase} placeholder='texto aqui..' />
-                    <button className='btn btn-success mx-1' onClick={addFrase} >+</button>
-                    <button className='btn btn-success mx-1' onClick={delFrase} >Borrar</button>
+                <div className='d-flex justify-content-center align-items-center'>
+                    <div className='px-2'>
+                        <h5>Frase</h5>
+                        <input type="text" name="texto" value={texto} onChange={setFrase} placeholder='texto aqui..' />
+                        <button className='btn btn-success mx-1' onClick={addFrase} >+</button>
+                        <button className='btn btn-success mx-1' onClick={delFrase} >Borrar</button>
+                    </div>
                 </div>
-                <div className='px-2'>
-                    <h5>Fuente</h5>
-                    <select name='font' defaultValue='arial' onChange={(e) => setFont(e.target.value)}>
-                        <option value='Arial'>Arial</option>
-                        <option value='Verdana'>Verdana</option>
-                        <option value='Tahoma'>Tahoma</option>
-                        <option value='Times New Roman'>Times New Roman</option>
-                        <option value='Georgia'>Georgia</option>
-                        <option value='Garamond'>Garamond</option>
-                        <option value='Courier New'>Courier New</option>
-                        <option value='Brush Script MT'>Brush Script MT</option>
-                    </select>
-                </div>
-                <div className='px-2'>
-                    <h5>Color</h5>
-                    <input type="color" value={color} onChange={(e) => setColor(e.target.value)} />
-                </div>
-                <div className='px-2'>
-                    <h5>Tamaño</h5>
-                    <select name='size' defaultValue='30px' onChange={(e) => setSize(e.target.value)}>
-                        <option value='20px'>Pequeño</option>
-                        <option value='30px'>Mediano</option>
-                        <option value='40px'>Grande</option>
-                    </select>
+                <div className='d-flex justify-content-center align-items-center'>
+                    <div className='px-2'>
+                        <h5>Fuente</h5>
+                        <select name='font' defaultValue='arial' onChange={(e) => setFont(e.target.value)}>
+                            <option value='Arial'>Arial</option>
+                            <option value='Verdana'>Verdana</option>
+                            <option value='Tahoma'>Tahoma</option>
+                            <option value='Times New Roman'>Times New Roman</option>
+                            <option value='Georgia'>Georgia</option>
+                            <option value='Garamond'>Garamond</option>
+                            <option value='Courier New'>Courier New</option>
+                            <option value='Brush Script MT'>Brush Script MT</option>
+                        </select>
+                    </div>
+                    <div className='px-2'>
+                        <h5>Color</h5>
+                        <input type="color" value={color} onChange={(e) => setColor(e.target.value)} />
+                    </div>
+                    <div className='px-2'>
+                        <h5>Tamaño</h5>
+                        <select name='size' defaultValue='30px' onChange={(e) => setSize(e.target.value)}>
+                            <option value='20px'>Pequeño</option>
+                            <option value='30px'>Mediano</option>
+                            <option value='40px'>Grande</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <figure id='meme'>
@@ -126,7 +132,7 @@ export const Meme = () => {
                 <img src={imagen.url} alt="" className='img' />
             </figure>
 
-            <div className='d-flex justify-content-center flex-wrap menu mt-2'>
+            <div className='d-flex justify-content-center align-items-center border-top border-bottom border-dark border-2 menu mt-2'>
                 <div className='px-2'>
                     <h5>Posicion</h5>
                     <button className='btn btn-success mx-1' onClick={() => setPosY(posY + 10)} > ↓ </button>
