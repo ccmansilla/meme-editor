@@ -132,7 +132,7 @@ export const Meme = () => {
                 <img src={imagen.url} alt="" className='img' />
             </figure>
 
-            <div className='d-flex justify-content-center align-items-center border-top border-bottom border-dark border-2 menu mt-2'>
+            <div className='d-flex justify-content-center align-items-center flex-wrap border-top border-bottom border-dark border-2 menu mt-2'>
                 <div className='px-2'>
                     <h5>Posicion</h5>
                     <button className='btn btn-success mx-1' onClick={() => setPosY(posY + 10)} > ↓ </button>
