@@ -92,8 +92,8 @@ export const Meme = () => {
                     <div className='px-2'>
                         <h5>Frase</h5>
                         <input type="text" name="texto" value={texto} onChange={setFrase} placeholder='texto aqui..' />
-                        <button className='btn btn-success mx-1' onClick={addFrase} >+</button>
-                        <button className='btn btn-success mx-1' onClick={delFrase} >Borrar</button>
+                        <button className='btn btn-success mx-1' onClick={addFrase} ><i class="fa-solid fa-plus"></i></button>
+                        <button className='btn btn-success mx-1' onClick={delFrase} ><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
                 <div className='d-flex justify-content-center align-items-center'>
@@ -135,19 +135,19 @@ export const Meme = () => {
             <div className='d-flex justify-content-center align-items-center flex-wrap border-top border-bottom border-dark border-2 menu mt-2'>
                 <div className='px-2'>
                     <h5>Posicion</h5>
-                    <button className='btn btn-success mx-1' onClick={() => setPosY(posY + 10)} > ↓ </button>
-                    <button className='btn btn-success mx-1' onClick={() => setPosY(posY - 10)} > ↑ </button>
-                    <button className='btn btn-success mx-1' onClick={() => setPosX(posX - 10)} > ← </button>
-                    <button className='btn btn-success mx-1' onClick={() => setPosX(posX + 10)} > → </button>
+                    <button className='btn btn-success mx-1' onClick={() => setPosY(posY + 10)} ><i class="fa-solid fa-arrow-down"></i></button>
+                    <button className='btn btn-success mx-1' onClick={() => setPosY(posY - 10)} ><i class="fa-solid fa-arrow-up"></i></button>
+                    <button className='btn btn-success mx-1' onClick={() => setPosX(posX - 10)} ><i class="fa-solid fa-arrow-left"></i></button>
+                    <button className='btn btn-success mx-1' onClick={() => setPosX(posX + 10)} ><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div className='px-2'>
                     <h5>Girar</h5>
-                    <button className='btn btn-success mx-1' onClick={() => setAngle(angle - 15)} > ←  </button>
-                    <button className='btn btn-success mx-1' onClick={() => setAngle(angle + 15)} > → </button>
+                    <button className='btn btn-success mx-1' onClick={() => setAngle(angle - 15)} ><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    <button className='btn btn-success mx-1' onClick={() => setAngle(angle + 15)} ><i class="fa-solid fa-arrow-rotate-right"></i></button>
                 </div>
                 <div className='px-2'>
-                    <h5>Meme</h5>
-                    <button onClick={generar} type="button" className='btn btn-success'>Descargar</button>
+                    <h5>Descargar</h5>
+                    <button onClick={generar} type="button" className='btn btn-success'><i class="fa-solid fa-download"></i></button>
                 </div>
             </div>
         </div>
