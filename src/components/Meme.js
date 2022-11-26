@@ -52,6 +52,8 @@ export const Meme = () => {
         setTexto('');
         setPosX(10);
         setPosY(10);
+        setAngle(0);
+        setSize('30px');
     }
 
     const generar = () => {
@@ -99,7 +101,7 @@ export const Meme = () => {
                 <div className='d-flex justify-content-center align-items-center'>
                     <div className='px-2'>
                         <h5>Fuente</h5>
-                        <select name='font' defaultValue='arial' onChange={(e) => setFont(e.target.value)}>
+                        <select name='font' value={font} onChange={(e) => setFont(e.target.value)}>
                             <option value='Arial'>Arial</option>
                             <option value='Verdana'>Verdana</option>
                             <option value='Tahoma'>Tahoma</option>
@@ -116,7 +118,7 @@ export const Meme = () => {
                     </div>
                     <div className='px-2'>
                         <h5>Tamaño</h5>
-                        <select name='size' defaultValue='30px' onChange={(e) => setSize(e.target.value)}>
+                        <select name='size' value={size} onChange={(e) => setSize(e.target.value)}>
                             <option value='20px'>Pequeño</option>
                             <option value='30px'>Mediano</option>
                             <option value='40px'>Grande</option>
