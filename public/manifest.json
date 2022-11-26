@@ -3,9 +3,9 @@
   "name": "Meme Editor by Carlos Mansilla",
   "icons": [
     {
-      "src": "meme_icon.png",
+      "src": "meme_logo.png",
       "type": "image/png",
-      "sizes": "78x78"
+      "sizes": "192x192"
     }
   ],
   "start_url": ".",
