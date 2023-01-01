@@ -9,15 +9,15 @@
     font-weight: bolder;
     font-size: 60px;
     margin: 0;
-    background-color: #198754;
-    color: white;
+    background-color: #0BA336;
+    color: #FFF;
     text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
              1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
 }
 
 .menu {
     padding-bottom: 10px;
-    background-color: rgb(164, 12, 12);
+    background-color: #A40C0C;
     color: white;
 }
 
@@ -31,6 +31,11 @@
     font-weight: bolder;
     text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
              1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.btn-success, .bg-success {
+    background-color: #0BA336 !important;
+    border-color: #570303;
 }
 
 #meme{
